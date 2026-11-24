@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="aero">
+<head>
+  <meta charset="UTF-8">
+  <title>FALauncher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="top-bar">
+    <div class="brand">
+      <div class="aero-orb">FA</div>
+      <div class="titulo-box">
+        <h1><b>FA</b>Launcher</h1>
+        <span>Frutiger Aero Edition</span>
+      </div>
+    </div>
+
+    <select class="selector-tema" id="selector-tema" onchange="cambiarTema(this.value)">
+      <option value="aero">Tema: Frutiger Aero</option>
+      <option value="aquatic">Tema: Aquatic</option>
+      <option value="dorfic">Tema: DORFic</option>
+      <option value="dark-aero">Tema: Dark Aero</option>
+      <option value="minimal">Tema: Minimalista</option>
+    </select>
+  </header>
+
+  <!-- DOCK INFERIOR ESTILO BARRA DE TAREAS -->
+  <footer class="aero-dock">
+    <div class="controles-fila">
+      <div class="grupo-inputs">
+        <div class="campo">
+          <label>Jugador</label>
+          <input type="text" id="usuario" value="Steve" maxlength="16">
+        </div>
+
+        <div class="campo">
+          <label>Versión</label>
+          <select class="input-aero" id="version">
+            <option value="1.21.4">1.21.4</option>
+            <option value="1.20.4">1.20.4</option>
+            <option value="1.16.5">1.16.5</option>
+            <option value="1.12.2">1.12.2</option>
+            <option value="1.8.9" selected>1.8.9</option>
+          </select>
+        </div>
+
+        <div class="campo campo-ram">
+          <label>RAM: <span id="ram-valor">4</span> GB</label>
+          <input type="range" id="ram" min="1" max="16" value="4" oninput="document.getElementById('ram-valor').innerText = this.value">
+        </div>
+      </div>
+
+      <button class="btn-jugar" id="btn-jugar" onclick="jugar()">JUGAR</button>
+    </div>
+
+    <div class="progreso-area">
+      <div class="barra-contenedor" id="barra-box">
+        <div class="barra-relleno" id="barra"></div>
+      </div>
+      <div class="estado" id="estado">Listo para jugar</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
